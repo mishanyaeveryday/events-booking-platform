@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'events/index.html')
+
+
+def categories(request):
+    return render(request, 'events/categories.html')
