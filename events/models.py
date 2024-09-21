@@ -1,5 +1,5 @@
 from django.db import models
-
+import uuid
 # Create your models here.
 
 
@@ -17,6 +17,8 @@ class Categories(models.Model):
 
 
 class Events(models.Model):
+    event_id = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False)
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
