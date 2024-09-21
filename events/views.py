@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Categories, Events
 # Create your views here.
 
@@ -13,6 +13,7 @@ def index(request):
     return render(request, 'events/index.html', context)
 
 
-def categories(request):
+def single_category(request, title):
+    category = get_object_or_404(Categories, title=title)
     categories = Categories.objects.all()
-    return render(request, 'events/categories.html', {'categories': categories})
+    return render(request, 'events/single_category.html', {'category': category, 'categories': categories})
