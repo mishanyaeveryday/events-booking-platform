@@ -5,7 +5,12 @@ from .models import Categories, Events
 
 def index(request):
     events = Events.objects.all()
-    return render(request, 'events/index.html', {'events': events})
+    categories = Categories.objects.all()
+    context = {
+        'events': events,
+        'categories': categories
+    }
+    return render(request, 'events/index.html', context)
 
 
 def categories(request):
