@@ -18,3 +18,9 @@ def single_category(request, title):
     categories = Categories.objects.all()
     events = Events.objects.filter(category=category)
     return render(request, 'events/single_category.html', {'category': category, 'categories': categories, 'events': events})
+
+
+def single_event(request, event_id):
+    event = get_object_or_404(Events, event_id=event_id)
+    categories = Categories.objects.all()
+    return render(request, 'events/single_event.html', {'event': event, 'categories': categories})

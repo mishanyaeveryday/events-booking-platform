@@ -1,0 +1,24 @@
+{% extends "events/base.html" %}
+{% block title %} {{ event.title }} {% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">{{ event.title }}</h1>
+    
+    <div class="card mb-3 rounded">
+        <div class="row g-0">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Details</h5>
+                    <p class="card-text"><strong>Description:</strong> {{ event.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> {{ event.price }} $</p>
+                    <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                    <p class="card-text"><strong>Place:</strong> {{ event.place }}</p>
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

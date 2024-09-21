@@ -12,7 +12,9 @@
                       </div>
                       <div class="col-md-8">
                           <div class="card-body">
-                              <h5 class="card-title mb-0">{{ event.title }}</h5>
+                            <h5 class="card-title mb-0">
+                                <a href="{% url 'single_event' event.event_id %}">{{ event.title }}</a>
+                            </h5>
                               <p class="card-text mb-0">{{ event.category }}</p>
                               <p class="card-text mb-0">{{ event.price }} $</p>
                               <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }} </small></p>

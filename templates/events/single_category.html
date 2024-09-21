@@ -16,9 +16,11 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title mb-0">{{ event.title }}</h5>
+                                <h5 class="card-title mb-0">
+                                <a href="{% url 'single_event' event.event_id %}">{{ event.title }}</a>
+                                </h5>
                                 <p class="card-text mb-0">{{ event.category }}</p>
-                                <p class="card-text mb-0">{{ event.price }}</p>
+                                <p class="card-text mb-0">{{ event.price }} $</p>
                                 <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }}</small></p>
                                 <p class="card-text mb-0"><small class="text-body-secondary">Date: {{ event.date }}</small></p>
                                 <button class="btn btn-primary mt-0">Buy</button>
@@ -33,11 +35,13 @@
 
 {% else %}
 <div class="container">
-        <div class="col-md-4">
-            <div class="alert alert-dark" role="alert">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-danger" role="alert">
                 There are no events in this category
             </div>
         </div>
+    </div>
 </div>
 {% endif %}
 {% endblock %}

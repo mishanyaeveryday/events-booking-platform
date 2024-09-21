@@ -30,7 +30,7 @@
                             <ul class="dropdown-menu custom-dropdown">
                                 {% for category in categories %}
                                     <li>
-                                        <a class="dropdown-item" href="/{{ category.title }}">{{ category.title }}</a>
+                                        <a class="dropdown-item" href="{% url 'single_category' category.title %}">{{ category.title }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
