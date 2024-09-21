@@ -1,7 +1,24 @@
 {% extends "events/base.html" %}
-{%block title %} Events {% endblock %}
+{% block title %} Events {% endblock %}
 {% block content %}
-<div class="features"> 
-    <h1>Main</h1>
-</div>
+{% for event in events %}
+<div class="card mb-3 ms-3 mt-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title mb-0">{{ event.title }}</h5>
+          <p class="card-text mb-0">{{ event.category }}</p>
+          <p class="card-text mb-0">{{ event.price }}</p>
+          <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }} </small></p>
+          <p class="card-text mb-0"><small class="text-body-secondary">Date: {{ event.date }} </small></p>
+          <button class="btn btn-primary btn mt-0">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
 {% endblock %}
+

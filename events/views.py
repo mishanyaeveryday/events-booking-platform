@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Categories, Events
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'events/index.html')
+    events = Events.objects.all()
+    return render(request, 'events/index.html', {'events': events})
 
 
 def categories(request):
-    return render(request, 'events/categories.html')
+    categories = Categories.objects.all()
+    return render(request, 'events/categories.html', {'categories': categories})
