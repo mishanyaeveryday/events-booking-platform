@@ -16,4 +16,5 @@ def index(request):
 def single_category(request, title):
     category = get_object_or_404(Categories, title=title)
     categories = Categories.objects.all()
-    return render(request, 'events/single_category.html', {'category': category, 'categories': categories})
+    events = Events.objects.filter(category=category)
+    return render(request, 'events/single_category.html', {'category': category, 'categories': categories, 'events': events})
