@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         {% for event in events %}
-            <div class="col-md-6"> <!-- Замените 4 на желаемую ширину, например, 3 для 4 карточек в ряд -->
+            <div class="col-md-6">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -19,9 +19,9 @@
                                 <h5 class="card-title mb-0">{{ event.title }}</h5>
                                 <p class="card-text mb-0">{{ event.category }}</p>
                                 <p class="card-text mb-0">{{ event.price }}</p>
-                                <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }} </small></p>
-                                <p class="card-text mb-0"><small class="text-body-secondary">Date: {{ event.date }} </small></p>
-                                <button class="btn btn-primary btn mt-0">Buy</button>
+                                <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }}</small></p>
+                                <p class="card-text mb-0"><small class="text-body-secondary">Date: {{ event.date }}</small></p>
+                                <button class="btn btn-primary mt-0">Buy</button>
                             </div>
                         </div>
                     </div>
@@ -32,6 +32,12 @@
 </div>
 
 {% else %}
-    <p>Нет событий в этой категории.</p>
+<div class="container">
+        <div class="col-md-4">
+            <div class="alert alert-dark" role="alert">
+                There are no events in this category
+            </div>
+        </div>
+</div>
 {% endif %}
 {% endblock %}
