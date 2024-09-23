@@ -24,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('events.urls')),
     path('api/', include('api.urls')),
+    path('donate/', include('payment.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
