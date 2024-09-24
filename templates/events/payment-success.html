@@ -1,0 +1,12 @@
+{% extends "events/base.html" %}
+{% block title %} Payment Successful {% endblock %}
+
+{% block content %}
+    <div class="w3-container w3-green" style="text-align: center; padding: 50px;">
+        <h1>Thank you for your payment!</h1>
+        <p>Your payment for the event "{{ event.title }}" was successful.</p>
+        <p><strong>Event Date:</strong> {{ event.date }}</p>
+        <p>We look forward to seeing you at the event!</p>
+        <a href="{% url 'index' %}" class="w3-button w3-blue">Back to Events</a>
+    </div>
+{% endblock %}

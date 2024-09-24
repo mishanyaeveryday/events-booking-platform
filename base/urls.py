@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('events.urls')),
     path('api/', include('api.urls')),
     path('donate/', include('payment.urls')),
+    path('paypal/', include('paypal.standard.ipn.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
