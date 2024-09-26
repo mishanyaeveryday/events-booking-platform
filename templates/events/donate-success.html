@@ -1,0 +1,10 @@
+{% extends "events/base.html" %}
+{% block title %} Donate Successful {% endblock %}
+
+{% block content %}
+    <div class="w3-container w3-green" style="text-align: center; padding: 50px;">
+        <h1>Thank you for your donate!</h1>
+        <p><strong>You help our project develop!</strong></p>
+        <a href="{% url 'index' %}" class="w3-button w3-blue">Back to Events</a>
+    </div>
+{% endblock %}

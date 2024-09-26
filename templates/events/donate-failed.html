@@ -1,0 +1,10 @@
+{% extends "events/base.html" %}
+{% block title %} Donate Failed {% endblock %}
+
+{% block content %}
+    <div class="w3-container w3-red" style="text-align: center; padding: 50px;">
+        <h1>Unfortunately, your donate did not go through.</h1>
+        <p>You can try again or contact support if the issue persists.</p>
+        <a href="{% url 'donate' %}" class="w3-button w3-blue">Try Again</a>
+    </div>
+{% endblock %}

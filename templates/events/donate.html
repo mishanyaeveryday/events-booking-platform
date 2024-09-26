@@ -18,6 +18,21 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .w3-card-4 {
+            width: 400px;
+            height: auto;  
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .w3-card-4 header, .w3-card-4 footer {
+            width: 111%; 
+            text-align: center;
+        }
     </style>
 
     <div class="center">
@@ -27,14 +42,9 @@
             </header>
             <div id="paypal-button-container"></div>
             <p id="result-message"></p>
-            
-            <script
-                src="https://www.paypal.com/sdk/js?client-id=AQuewqHBLhFtlfzcgKVlK09BLB80DBA0ZSGiFsglxzQXb930eICmDI005gBbIPS5vPxu5CSm67Vnvc_B&currency=USD"></script>
+            {{paypal.render}}
             <script>
-                //hear paypal
-
             </script>
-
             <div class="w3-container">
                 <p></p>
             </div>
