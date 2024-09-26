@@ -3,11 +3,11 @@
 {% block content %}
 <div class="container mt-4">
     <h1 class="text-center mb-4">{{ event.title }}</h1>
-    
     <div class="card mb-3 rounded">
         <div class="row g-0">
-            <div class="col-md-4">
-            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 350px; height: 250px; object-fit: cover;">
+            </div>            
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">Details</h5>
@@ -15,10 +15,10 @@
                     <p class="card-text"><strong>Price:</strong> {{ event.price }} $</p>
                     <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
                     <p class="card-text"><strong>Place:</strong> {{ event.place }}</p>
-                    {{paypal.render}}
+                    {{ paypal.render }}
                 </div>
-            </div>
+            </div>            
         </div>
-    </div>
+    </div>    
 </div>
 {% endblock %}

@@ -7,8 +7,8 @@
           <div class="col-md-6">
               <div class="card mb-3">
                   <div class="row g-0">
-                      <div class="col-md-4">
-                          <img src="..." class="img-fluid rounded-start" alt="...">
+                      <div class="col-md-4 d-flex justify-content-center align-items-center">
+                          <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 100%; height: 100%; object-fit: cover;">
                       </div>
                       <div class="col-md-8">
                           <div class="card-body">
@@ -19,7 +19,6 @@
                               <p class="card-text mb-0">{{ event.price }} $</p>
                               <p class="card-text mb-0"><small class="text-body-secondary">Place: {{ event.place }} </small></p>
                               <p class="card-text mb-0"><small class="text-body-secondary">Date: {{ event.date }} </small></p>
-                              <button class="btn btn-primary btn mt-0">Buy</button>
                           </div>
                       </div>
                   </div>

@@ -26,6 +26,7 @@ class Events(models.Model):
     price = models.FloatField()
     date = models.DateField()
     place = models.CharField(max_length=255)
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.title
