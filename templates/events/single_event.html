@@ -6,8 +6,10 @@
     <div class="card mb-3 rounded">
         <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 350px; height: 250px; object-fit: cover;">
-            </div>            
+                {% if event.image %}
+                    <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 350px; height: 250px; object-fit: cover;">
+                    {% endif %}
+                </div>            
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">Details</h5>
@@ -26,5 +28,6 @@
             </div>            
         </div>
     </div>    
+    {{m|safe}}
 </div>
 {% endblock %}

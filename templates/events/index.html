@@ -8,7 +8,9 @@
               <div class="card mb-3">
                   <div class="row g-0">
                       <div class="col-md-4 d-flex justify-content-center align-items-center">
-                          <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 350px; height: 250px; object-fit: cover;">
+                        {% if event.image %}
+                        <img src="{{ event.image.url }}" class="img-fluid rounded-start" alt="{{ event.title }}" style="width: 350px; height: 250px; object-fit: cover;">
+                        {% endif %}
                       </div>
                       <div class="col-md-8">
                           <div class="card-body">

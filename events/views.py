@@ -4,6 +4,8 @@ from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import uuid
 from django.urls import reverse
+import folium
+import geocoder
 # Create your views here.
 
 
@@ -39,9 +41,28 @@ def single_event(request, event_id):
         'return_url': f"http://{host}{reverse('payment-success', kwargs={'event_id': event_id})}",
         'cancel_url': f"http://{host}{reverse('payment-failed', kwargs={'event_id': event_id})}",
     }
-
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
-    return render(request, 'events/single_event.html', {'event': event, 'categories': categories, 'paypal': paypal_payment})
+    location_query = f"{event.place}"
+
+    location = geocoder.osm(location_query)
+
+# Проверяем, есть ли координаты
+    lat = location.lat if location and location.lat else 0
+    lng = location.lng if location and location.lng else 0
+    popup_info = location.country if location and location.country else "Location Unknown"
+
+# Создаем карту с координатами
+    m = folium.Map(location=[lat, lng], zoom_start=12)
+    folium.Marker([lat, lng], tooltip='Click for more',
+                  popup=popup_info).add_to(m)
+    map_html = m._repr_html_()
+
+    return render(request, 'events/single_event.html', {
+        'event': event,
+        'categories': categories,
+        'paypal': paypal_payment,
+        'm': map_html,
+    })
 
 
 def PaymentSuccess(request, event_id):
