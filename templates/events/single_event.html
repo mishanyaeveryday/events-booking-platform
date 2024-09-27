@@ -12,10 +12,16 @@
                 <div class="card-body">
                     <h5 class="card-title">Details</h5>
                     <p class="card-text"><strong>Description:</strong> {{ event.description }}</p>
+                    {% if event.price > 0 %}
                     <p class="card-text"><strong>Price:</strong> {{ event.price }} $</p>
                     <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
                     <p class="card-text"><strong>Place:</strong> {{ event.place }}</p>
                     {{ paypal.render }}
+                    {% else  %}
+                    <p class="card-text text-danger"><strong>FREE</strong></p>
+                    <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                    <p class="card-text"><strong>Place:</strong> {{ event.place }}</p>
+                    {% endif %}
                 </div>
             </div>            
         </div>
