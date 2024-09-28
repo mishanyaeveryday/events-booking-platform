@@ -79,6 +79,6 @@ PAYPAL_TEST = True  # Set to False for production
 - If there are issues with the map, ensure that geocoding is working correctly for the given locations.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
